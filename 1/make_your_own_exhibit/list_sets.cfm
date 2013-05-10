@@ -1,0 +1,1 @@
+<html><head><title>Untitled Document</title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head><body bgcolor="#CCCCCC" text="#000000" link="#FF0000" vlink="#990000"><p>Select an exhibit</p><ul>  <li>Camels</li>  <li>Varmints</li></ul><hr>Start a new exhibit. <p>See exhibits other people have made.</p></body></html>

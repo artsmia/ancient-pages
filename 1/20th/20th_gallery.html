@@ -1,0 +1,88 @@
+<HTML><HEAD><TITLE>Mpls Inst Arts - Post World War II Art Gallery</TITLE></HEAD>
+<SCRIPT LANGUAGE="JavaScript1.1">
+
+//---Note: image file names must consist of a five letter title plus a consecutive number ( example: print1.jpg, print2.jpg)
+
+//---Change number below to reflect total number of images to be browsed------
+NumberOfWorks=3; 
+
+//---Change five letter work type below to reflect image file names ---
+WorkType="image";
+
+//---Change the three letter code below to reflect the file type of the images---
+Format="jpg";
+
+var sctr=0; 
+var halt=0;
+var newIndex; 
+var durl;
+var isn=new Array(); 
+
+for (i=0;i<NumberOfWorks;i++) {
+    isn[i]=new Image;
+}
+
+//---Add or delete items to the array below by adding to or deleting from the incremental numbering scheme---
+//---Note: First line must read (isn[0].src=WorkType+"1."+Format;)---
+isn[0].src=WorkType+"1."+Format;
+isn[1].src=WorkType+"2."+Format;
+isn[2].src=WorkType+"3."+Format;
+
+var durl=new Array();
+//---Add corresponding "label" copy below using \n for line breaks---
+durl[0]="Joan Miro\nSpanish Playing Cards,\n1920";
+durl[1]="Pablo Picasso\nWoman in an Armchair (Composition),\n1927";
+durl[2]="Bob Thompson\nHomage to Nina Simone,\n1965";
+
+var btn=new Array();
+for (i=0;i<NumberOfWorks;i++){
+btn[i]=new Image();
+btn[i].src= WorkType + (i+1) + "."+Format;
+}
+
+function picklabel() {
+                var newIndex = 0
+                document.Label.nameit.value = (durl[newIndex])
+}
+
+//---Function to use cache from browser to display images mutiple times over---
+function loadCached() {
+        var gifIndex = form.cached.selectedIndex
+        document.Label.thumbnail2.src = btn[gifIndex].src
+}
+
+function butclick() {
+                var newIndex = 0
+                var gifName = document.Label.thumbnail2.src
+                var gifIndex = (gifName.charAt(gifName.length - 5)) - 1
+                if (gifIndex<(btn.length - 1)) { newIndex = gifIndex + 1 }
+                document.Label.thumbnail2.src = btn[newIndex].src
+                document.Label.nameit.value = (durl[newIndex]) 
+} 
+
+</SCRIPT>
+</HEAD>
+
+<BODY BACKGROUND="../GIF/bcgnd_fab.gif" TEXT="#111111" LINK="#660000" ALINK="#AA0000" VLINK="#444444" onLoad="return picklabel()"><FORM NAME="Label">
+
+
+
+<table border=0 cellspacing=5 width="445">
+<TR><TD colspan="2"><font size=5>20th-Century Art</font size></tr><TR><TD height=240><IMG SRC="image1.jpg" WIDTH=240 HEIGHT=240 ALT="Image from 20th-Century Collection" name="thumbnail2"></TD>
+<TD VALIGN=bottom>
+      <textarea name="nameit" rows="3" cols="35" value="newIndex"></textarea>
+  
+ <A HREF="../restrictions.html#top">(c)</A>
+<FORM NAME="Advance" onCLick="return butclick()">
+
+<INPUT TYPE="button" VALUE="Browse Next" onClick="butclick()"><BR>
+
+
+<TR>
+      <TD COLSPAN="2">See examples of late 20th-century trends in European and 
+        American art. Included are paintings by Max Beckman, Georgia O'Keeffe, 
+        Joan Miro, Grace Hartigan, and Chuck Close.
+        <hr>
+        <i>Send comments to the <a href="mailto:wlee@artsMIA.org" target="">webmaster.</a></i>
+    </TR></form></table></form>
+</body></HTML>
